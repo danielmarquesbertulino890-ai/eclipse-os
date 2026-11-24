@@ -63,7 +63,7 @@ else
 fi
 # Usuario eclipse (senha: eclipse), sudo sem senha e login automatico
 id eclipse >/dev/null 2>&1 || useradd -m -s /bin/bash eclipse
-echo "eclipse:eclipse" | chpasswd
+echo "eclipse:1234" | chpasswd
 for g in sudo audio video netdev plugdev cdrom dialout; do
   getent group $g >/dev/null && usermod -aG $g eclipse || true
 done
