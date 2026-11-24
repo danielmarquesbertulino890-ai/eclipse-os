@@ -9,7 +9,6 @@ jobs:
         run: sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/lib/android
       - name: Construir ISO (Debian 12 em Docker)
         run: |
-          sed -i 's/ --bootloaders "syslinux,grub-efi"//' build-eclipse.sh
           docker run --rm --privileged -v "$PWD":/work -w /work debian:bookworm bash build-eclipse.sh
       - uses: actions/upload-artifact@v4
         with:
